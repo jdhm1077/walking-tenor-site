@@ -1,0 +1,70 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Booking | The Walking Tenor",
+  description: "Book Jesús Daniel Hernández, The Walking Tenor, for your next performance or event.",
+};
+
+export default function BookingPage() {
+  return (
+    <section className="py-24 md:py-28 bg-teal-deep text-center relative overflow-hidden">
+      <div className="max-w-[560px] mx-auto px-8 relative z-10">
+        <span className="eyebrow text-gold block mb-4">Booking</span>
+        <h1 className="text-4xl md:text-5xl text-cream leading-tight mb-5">
+          Bring The Walking Tenor to your stage
+        </h1>
+        <p className="text-cream/65 mb-10 leading-relaxed">
+          For concert bookings, presenter inquiries, weddings, and special
+          events, reach out with your event details and we&rsquo;ll follow up
+          with availability and a press kit.
+        </p>
+
+        <form className="text-left space-y-5 bg-cream/[0.04] border border-cream/10 rounded-xl p-8">
+          <div>
+            <label className="block text-cream/80 text-sm mb-2" htmlFor="name">
+              Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label className="block text-cream/80 text-sm mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label className="block text-cream/80 text-sm mb-2" htmlFor="details">
+              Event details
+            </label>
+            <textarea
+              id="details"
+              rows={4}
+              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40"
+              placeholder="Date, venue, event type..."
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-terracotta text-cream py-3.5 rounded-full font-bold hover:bg-terracotta/90 transition-colors"
+          >
+            Send inquiry
+          </button>
+          <p className="text-cream/40 text-xs text-center">
+            This form isn&rsquo;t wired up to send email yet — a future sprint
+            connects it to a form handler (e.g. Netlify Forms).
+          </p>
+        </form>
+      </div>
+    </section>
+  );
+}
