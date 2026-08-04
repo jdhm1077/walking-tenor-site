@@ -82,8 +82,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { title: "America the Beautiful", sub: "Tenor & flamenco guitar arrangement", status: "Out now" },
-              { title: "MERCI", sub: "Debut single — ALDEBARAN", status: "Coming soon" },
-              { title: "EL RELOJ", sub: "Single — ALDEBARAN", status: "Coming soon" },
+              { title: "MERCI", sub: "Debut single", status: "Coming soon" },
+              { title: "EL RELOJ", sub: "Single", status: "Coming soon" },
             ].map((r) => (
               <div
                 key={r.title}

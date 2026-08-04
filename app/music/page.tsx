@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Music | The Walking Tenor",
@@ -12,20 +13,22 @@ const releases = [
     status: "Out now",
     live: true,
     href: "/music/america-the-beautiful",
+    cover: "/america-the-beautiful-cover.jpg",
   },
   {
     title: "MERCI",
-    sub: "Debut single — ALDEBARAN",
+    sub: "Debut single",
     status: "Coming soon",
     live: false,
     href: "#",
   },
   {
-    title: "EL RELOJ",
-    sub: "Single — ALDEBARAN",
-    status: "Coming soon",
-    live: false,
-    href: "#",
+    title: "L'orologio",
+    sub: "Album — Jesús Daniel Hernández",
+    status: "Out now",
+    live: true,
+    href: "/music/lorologio",
+    cover: "/lorologio-card.jpg",
   },
 ];
 
@@ -53,14 +56,25 @@ export default function MusicPage() {
               href={r.href}
               className="bg-cream-dim border border-ink/10 rounded-xl overflow-hidden hover:-translate-y-1 hover:border-gold transition-all block"
             >
-              <div
-                className={`aspect-square flex items-end p-4 ${
-                  r.live
-                    ? "bg-gradient-to-br from-teal to-teal-deep"
-                    : "bg-gradient-to-br from-[#8a8474] to-teal-deep"
-                }`}
-              >
-                <span className="text-[0.65rem] tracking-widest uppercase bg-gold text-teal-deep px-2.5 py-1 rounded-full font-bold">
+              <div className="aspect-square relative flex items-end p-4">
+                {r.cover ? (
+                  <Image
+                    src={r.cover}
+                    alt={r.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                  />
+                ) : (
+                  <div
+                    className={`absolute inset-0 ${
+                      r.live
+                        ? "bg-gradient-to-br from-teal to-teal-deep"
+                        : "bg-gradient-to-br from-[#8a8474] to-teal-deep"
+                    }`}
+                  />
+                )}
+                <span className="relative z-10 text-[0.65rem] tracking-widest uppercase bg-gold text-teal-deep px-2.5 py-1 rounded-full font-bold">
                   {r.status}
                 </span>
               </div>
