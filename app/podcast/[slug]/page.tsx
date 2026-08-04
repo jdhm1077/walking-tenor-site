@@ -1,0 +1,79 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { episodes } from "@/data/episodes";
+
+export function generateStaticParams() {
+  return episodes.map((ep) => ({ slug: ep.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const episode = episodes.find((ep) => ep.slug === slug);
+  if (!episode) return {};
+  return {
+    title: `${episode.title} | Stories That Sing`,
+    description: episode.teaser,
+  };
+}
+
+export default async function EpisodePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const episode = episodes.find((ep) => ep.slug === slug);
+  if (!episode) notFound();
+
+  return (
+    <>
+      <section className={`py-20 md:py-24 bg-gradient-to-br ${episode.gradient} relative`}>
+        <div className="max-w-[760px] mx-auto px-8 text-center relative z-10">
+          <span className="inline-block text-[0.68rem] tracking-widest uppercase bg-cream/90 text-teal-deep px-3 py-1.5 rounded-full font-bold mb-5">
+            Episode {episode.num}
+          </span>
+          <h1 className="text-3xl md:text-5xl text-cream leading-tight font-display font-bold">
+            {episode.title}
+          </h1>
+        </div>
+      </section>
+
+      <section className="py-16 bg-cream">
+        <div className="max-w-[700px] mx-auto px-8">
+          <h2 className="eyebrow mb-4">Synopsis</h2>
+          <p className="text-[#3a3833] text-[1.05rem] leading-relaxed mb-12">
+            {episode.synopsis}
+          </p>
+
+          <div className="bg-cream-dim rounded-xl p-7 text-center mb-12">
+            <p className="text-[#544f46] mb-5 text-sm">
+              Listen on your favorite platform
+            </p>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <span className="border border-teal-deep text-teal-deep px-5 py-2.5 rounded-full text-sm font-bold">
+                Spotify — coming soon
+              </span>
+              <span className="border border-teal-deep text-teal-deep px-5 py-2.5 rounded-full text-sm font-bold">
+                Apple Podcasts — coming soon
+              </span>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/podcast"
+              className="text-terracotta font-bold text-sm border-b-2 border-terracotta pb-0.5"
+            >
+              ← More episodes
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

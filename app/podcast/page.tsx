@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { episodes } from "@/data/episodes";
 
 export const metadata: Metadata = {
   title: "Podcast | The Walking Tenor",
   description: "Stories That Sing — a podcast hosted by Jesús Daniel Hernández, The Walking Tenor.",
 };
-
-const episodes = [
-  { num: "01", title: "The Song That Almost Didn't Exist", sub: "The incredible story behind a song you thought you knew." },
-  { num: "02", title: "Placeholder Episode Title", sub: "Episode description goes here." },
-  { num: "03", title: "Placeholder Episode Title", sub: "Episode description goes here." },
-  { num: "04", title: "Placeholder Episode Title", sub: "Episode description goes here." },
-  { num: "05", title: "Why Boleros Make You Cry", sub: "A deep dive into heartbreak, beauty, and the power of boleros." },
-  { num: "06", title: "Placeholder Episode Title", sub: "Episode description goes here." },
-  { num: "07", title: "When Frank Sinatra Covered a Mariachi Song", sub: "The time \u201cOl\u2019 Blue Eyes\u201d surprised the world." },
-  { num: "10", title: "The Banned Notes That Became Hits", sub: "The songs almost silenced \u2014 and how they changed music forever." },
-];
 
 export default function PodcastPage() {
   return (
@@ -33,26 +24,31 @@ export default function PodcastPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-teal-deep">
-        <div className="max-w-[760px] mx-auto px-8">
-          <div className="border-t border-cream/10">
-            {episodes.map((ep) => (
+      <section className="py-20 bg-cream-dim">
+        <div className="max-w-[1160px] mx-auto px-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {episodes.map((ep) => (
+            <Link
+              key={ep.slug}
+              href={`/podcast/${ep.slug}`}
+              className="bg-cream rounded-xl overflow-hidden hover:-translate-y-1 transition-transform block group"
+            >
               <div
-                key={ep.num}
-                className="flex items-center gap-5 py-5 border-b border-cream/10"
+                className={`aspect-[16/10] bg-gradient-to-br ${ep.gradient} relative flex items-end p-4`}
               >
-                <div className="font-display font-bold text-gold text-base w-9">
-                  {ep.num}
-                </div>
-                <div>
-                  <div className="text-cream font-semibold text-[0.95rem]">
-                    {ep.title}
-                  </div>
-                  <div className="text-cream/55 text-sm mt-0.5">{ep.sub}</div>
-                </div>
+                <span className="text-[0.65rem] tracking-widest uppercase bg-cream/90 text-teal-deep px-2.5 py-1 rounded-full font-bold">
+                  Episode {ep.num}
+                </span>
               </div>
-            ))}
-          </div>
+              <div className="p-5">
+                <h3 className="text-teal-deep text-[1.05rem] font-display font-semibold leading-snug group-hover:text-terracotta transition-colors">
+                  {ep.title}
+                </h3>
+                <p className="text-[#78725f] text-sm mt-2.5 leading-relaxed">
+                  {ep.teaser}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
