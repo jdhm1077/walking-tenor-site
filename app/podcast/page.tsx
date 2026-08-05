@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { episodes } from "@/data/episodes";
+import Image from "next/image";
+import "../podcast-cover.css";
+import PodcastCover from "@/components/PodcastCover";
 
 export const metadata: Metadata = {
   title: "Podcast | The Walking Tenor",
@@ -10,13 +13,21 @@ export const metadata: Metadata = {
 export default function PodcastPage() {
   return (
     <>
-      <section className="py-24 md:py-28 bg-cream text-center">
-        <div className="max-w-[600px] mx-auto px-8">
-          <span className="eyebrow block mb-4">The Podcast</span>
-          <h1 className="text-4xl md:text-5xl text-teal-deep leading-tight mb-4">
+      <section className="py-24 md:py-28 bg-teal-deep text-center">
+        <div className="max-w-[600px] mx-auto px-8 flex flex-col items-center">
+          <Image
+            src="/podcast-cover-static.webp"
+            alt="The Walking Tenor — Stories That Sing Podcast"
+            width={380}
+            height={380}
+            className="rounded-xl shadow-2xl"
+            priority
+          />
+          <span className="eyebrow text-gold block mt-10 mb-4">The Podcast</span>
+          <h1 className="text-4xl md:text-5xl text-cream leading-tight mb-4">
             Stories That Sing
           </h1>
-          <p className="text-[#544f46]">
+          <p className="text-cream/65">
             Cinematic narrative episodes uncovering the hidden histories
             behind famous songs — 7 to 12 minutes, hosted by Jesús Daniel
             Hernández.
@@ -32,10 +43,12 @@ export default function PodcastPage() {
               href={`/podcast/${ep.slug}`}
               className="bg-cream rounded-xl overflow-hidden hover:-translate-y-1 transition-transform block group"
             >
-              <div
-                className={`aspect-[16/10] bg-gradient-to-br ${ep.gradient} relative flex items-end p-4`}
-              >
-                <span className="text-[0.65rem] tracking-widest uppercase bg-cream/90 text-teal-deep px-2.5 py-1 rounded-full font-bold">
+              <div className="aspect-square relative overflow-hidden flex items-end p-4">
+                <PodcastCover
+                  mini
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", borderRadius: 0, boxShadow: "none" }}
+                />
+                <span className="relative z-10 text-[0.65rem] tracking-widest uppercase bg-cream/90 text-teal-deep px-2.5 py-1 rounded-full font-bold">
                   Episode {ep.num}
                 </span>
               </div>

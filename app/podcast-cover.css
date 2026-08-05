@@ -1,0 +1,175 @@
+/*
+  The Walking Tenor — Podcast Cover Art component
+  Arch + waveform, reused at every size (hero art, mini thumbnails, nav badges).
+  Drop this file in as-is. Only the tokens in :root are meant to be tuned.
+*/
+
+:root{
+  --twt-charcoal:      #15181B;
+  --twt-charcoal-2:    #1D2124;
+  --twt-gold:          #C9A227;
+  --twt-gold-bright:   #E4C158;
+  --twt-ivory:         #F1E9D8;
+  --twt-teal:          #2C6E68;
+  --twt-terracotta:    #B5563C;
+}
+
+/* ---------- Cover shell ---------- */
+/* Use .twt-cover on any square container. Sizing is controlled entirely
+   by width/height (or aspect-ratio) on the element itself — every child
+   is proportional (%, em) so the arch + wave scale correctly at any size. */
+
+.twt-cover{
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(120% 140% at 50% -10%, #23282c 0%, var(--twt-charcoal) 55%, #0e1012 100%);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+}
+
+/* Optional: hides title/kicker for thumbnail-sized uses */
+.twt-cover--mini .twt-cover__title,
+.twt-cover--mini .twt-cover__kicker{
+  display: none;
+}
+
+/* ---------- Arch (proscenium) ---------- */
+
+.twt-cover__arch{
+  width: 61%;
+  aspect-ratio: 220 / 160;
+  border: 3px solid var(--twt-gold);
+  border-bottom: none;
+  border-radius: 110px 110px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5%;
+}
+
+.twt-cover__arch::before{
+  content: "";
+  position: absolute;
+  inset: 6% 6% 0 6%;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-bottom: none;
+  border-radius: 100px 100px 0 0;
+}
+
+.twt-cover--mini .twt-cover__arch{
+  width: 58%;
+  padding-bottom: 6%;
+}
+
+/* ---------- Waveform ---------- */
+/* 5–9 bars recommended. Fewer bars for smaller thumbnails reads cleaner. */
+
+.twt-cover__wave{
+  display: flex;
+  align-items: flex-end;
+  gap: 4%;
+  height: 42%;
+  width: 78%;
+  margin-bottom: 6%;
+}
+
+.twt-cover--mini .twt-cover__wave{
+  height: 38%;
+}
+
+.twt-cover__wave span{
+  flex: 1;
+  border-radius: 2px;
+  display: block;
+  background: var(--twt-gold);
+  transform-origin: bottom;
+  animation:
+    twt-bar-color 3.6s linear infinite,
+    twt-bar-height 1.4s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+/* Animation only runs while .is-playing is present on the .twt-cover element.
+   Toggle this class from JS tied to real playback state — see podcast-cover.js */
+.twt-cover.is-playing .twt-cover__wave span{
+  animation-play-state: running;
+}
+
+/* Negative delays put each bar into the active animation phase immediately,
+   so the paused state freezes them at distinct heights and colors — no JS needed. */
+.twt-cover__wave span:nth-child(1){ animation-delay:  0s,     0s; }
+.twt-cover__wave span:nth-child(2){ animation-delay: -1.2s,  -0.35s; }
+.twt-cover__wave span:nth-child(3){ animation-delay: -1.8s,  -0.70s; }
+.twt-cover__wave span:nth-child(4){ animation-delay: -2.7s,  -1.05s; }
+.twt-cover__wave span:nth-child(5){ animation-delay: -3.2s,  -1.25s; }
+.twt-cover__wave span:nth-child(6){ animation-delay: -0.6s,  -0.20s; }
+.twt-cover__wave span:nth-child(7){ animation-delay: -2.2s,  -0.90s; }
+
+@keyframes twt-bar-color{
+  0%   { background: var(--twt-gold); }
+  33%  { background: var(--twt-gold-bright); }
+  50%  { background: var(--twt-terracotta); }
+  75%  { background: var(--twt-teal); }
+  100% { background: var(--twt-gold); }
+}
+
+@keyframes twt-bar-height{
+  0%   { height: 22%; }
+  50%  { height: 100%; }
+  100% { height: 40%; }
+}
+
+/* ---------- Title / kicker / tick (full-size cover only) ---------- */
+
+.twt-cover__title{
+  font-family: var(--font-fraunces), 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+  color: var(--twt-ivory);
+  margin-top: 26px;
+  text-align: center;
+}
+
+.twt-cover__kicker{
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--twt-gold-bright);
+  margin-top: 8px;
+}
+
+.twt-cover__tick{
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--twt-terracotta), var(--twt-gold), var(--twt-teal));
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.twt-cover--mini .twt-cover__tick{
+  bottom: 8%;
+  left: 8%;
+  right: 8%;
+}
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce){
+  .twt-cover__wave span{
+    animation: none !important;
+    height: 55% !important;
+    background: var(--twt-gold) !important;
+  }
+}

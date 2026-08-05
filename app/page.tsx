@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import StorySlider from "@/components/StorySlider";
 
 export default function Home() {
   return (
@@ -41,11 +43,7 @@ export default function Home() {
       {/* STORY TEASER */}
       <section className="py-24 bg-cream">
         <div className="max-w-[1160px] mx-auto px-8 grid md:grid-cols-2 gap-14 items-center">
-          <div className="aspect-[4/5] rounded-lg bg-gradient-to-br from-teal to-teal-deep relative flex items-center justify-center overflow-hidden">
-            <span className="font-display italic text-cream/40 text-sm relative z-10">
-              portrait — to be added
-            </span>
-          </div>
+          <StorySlider />
           <div>
             <span className="eyebrow block mb-3.5">The Story</span>
             <h2 className="text-3xl md:text-4xl text-teal-deep mb-4">
@@ -81,16 +79,27 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "America the Beautiful", sub: "Tenor & flamenco guitar arrangement", status: "Out now" },
-              { title: "MERCI", sub: "Debut single", status: "Coming soon" },
-              { title: "EL RELOJ", sub: "Single", status: "Coming soon" },
+              { title: "America the Beautiful", sub: "Tenor & flamenco guitar arrangement", status: "Out now", cover: "/america-the-beautiful-cover.jpg" },
+              { title: "MERCI", sub: "Debut single", status: "Coming soon", cover: null },
+              { title: "L’orologio", sub: "Album — Jesús Daniel Hernández", status: "Out now", cover: "/lorologio-card.jpg" },
             ].map((r) => (
               <div
                 key={r.title}
                 className="bg-cream/[0.04] border border-cream/10 rounded-xl overflow-hidden hover:-translate-y-1 hover:border-gold transition-all"
               >
-                <div className="aspect-square bg-gradient-to-br from-teal to-teal-deep flex items-end p-4">
-                  <span className="text-[0.65rem] tracking-widest uppercase bg-gold text-teal-deep px-2.5 py-1 rounded-full font-bold">
+                <div className="aspect-square relative flex items-end p-4">
+                  {r.cover ? (
+                    <Image
+                      src={r.cover}
+                      alt={r.title}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#8a8474] to-teal-deep" />
+                  )}
+                  <span className="relative z-10 text-[0.65rem] tracking-widest uppercase bg-gold text-teal-deep px-2.5 py-1 rounded-full font-bold">
                     {r.status}
                   </span>
                 </div>
@@ -112,14 +121,14 @@ export default function Home() {
       {/* PODCAST TEASER */}
       <section className="py-24 bg-cream">
         <div className="max-w-[1160px] mx-auto px-8 grid md:grid-cols-[1fr_1.3fr] gap-14 items-start">
-          <div className="aspect-square rounded-lg bg-teal-deep relative overflow-hidden shadow-2xl">
-            <div className="absolute -bottom-[40%] -right-[20%] w-[80%] h-[80%] rounded-full bg-terracotta opacity-90" />
-            <span className="absolute top-6 left-6 text-gold text-[0.68rem] tracking-widest uppercase font-bold">
-              Podcast
-            </span>
-            <h3 className="relative z-10 text-cream text-3xl p-6 leading-tight">
-              Stories<br />That Sing
-            </h3>
+          <div className="aspect-square rounded-lg overflow-hidden shadow-2xl relative">
+            <Image
+              src="/podcast-cover-static.webp"
+              alt="The Walking Tenor — Stories That Sing Podcast"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 43vw, 100vw"
+            />
           </div>
           <div>
             <span className="eyebrow block mb-3.5">The Podcast</span>
