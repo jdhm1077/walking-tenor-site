@@ -47,14 +47,20 @@ export default function Home() {
           <div>
             <span className="eyebrow block mb-3.5">The Story</span>
             <h2 className="text-3xl md:text-4xl text-teal-deep mb-4">
-              From Ciudad Juárez to the opera stage
+              Two uniforms. One calling.
             </h2>
             <p className="text-[#544f46] leading-relaxed mb-4">
-              A soldier&rsquo;s path, a singer&rsquo;s calling. Jesús Daniel
-              Hernández built a life as an operatic tenor after service in the
-              U.S. Army — from the Plácido Domingo&ndash;Cafritz Young Artist
-              Program to stages performing Macbeth, La Traviata, Falstaff, and
-              Lucrezia Borgia.
+              Before the opera stage, there was the uniform. Before the
+              applause, there was service.
+            </p>
+            <p className="text-[#544f46] leading-relaxed mb-4">
+              From Ciudad Juárez to the U.S. Army, from Iraq to the world of
+              opera, Jesús Daniel Hernández has lived between seemingly
+              different worlds—soldier and singer, discipline and artistry,
+              duty and imagination.
+            </p>
+            <p className="text-[#544f46] leading-relaxed mb-4">
+              The Walking Tenor is where those paths become one story.
             </p>
             <Link
               href="/story"
