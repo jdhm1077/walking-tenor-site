@@ -59,6 +59,73 @@ export default function LorologioPage() {
         </div>
       </section>
 
+      {/* EVOKING MY MEMORIES */}
+      <section className="py-20 bg-cream">
+        <div className="max-w-[700px] mx-auto px-8">
+          <span className="eyebrow block mb-4">In His Own Words</span>
+          <h2 className="text-3xl md:text-4xl text-teal-deep font-display mb-4">
+            Evoking My Memories
+          </h2>
+          <div className="w-12 h-0.5 bg-gold mb-8" />
+          <div className="space-y-6 text-[#3a3833] leading-relaxed text-[1.05rem]">
+            <p>
+              I remember very well the feeling I had the first day I stepped
+              onto the stage at the Kennedy Center. It was a rehearsal for one
+              of the operas I participated in during my time with the
+              Domingo–Cafritz young artist program. A dream made reality. It
+              was precisely how I dreamed it would be as a child when I used to
+              pretend I was singing in a big theater. A big knot in my throat
+              formed for the next memory that graced my mind. A beautiful
+              recollection of my childhood when with my guitar, I would sing
+              next to my lovely viejita linda, my grandma Bernarda and the way
+              she used to correct me on the lyrics and style of the song when
+              we used to sing together at our lovely house in my dear Ciudad
+              Juárez. The song of <em>El reloj</em> (The clock) is a song I
+              used to sing all the time with my grandma. Every time I sing this
+              song it evokes beautiful memories, and for that reason, my first
+              musical production is titled <em>L&rsquo;orologio</em> (The clock
+              in Italian, with a never before recorded Italian translation of{" "}
+              <em>El reloj</em>).
+            </p>
+            <p>
+              This album highlights the Italian version of the song of{" "}
+              <em>El reloj</em> by one of the great composers of Tamaulipas,
+              México, Roberto Cantoral. The song was composed in 1956 while he
+              sang with the trio Los Tres Caballeros.
+            </p>
+            <p>
+              The inspiration for this Italian translation of{" "}
+              <em>El reloj</em> came to be after a concert in Sora, Italy.
+              During a late bohemian night, I grabbed my guitar and sang the
+              song of <em>El reloj</em>. In the audience was my dear friend
+              Leandro Allini, a wonderful musician, poet and true bohemian. He
+              loved the song and interpretation of the song, and I asked him if
+              he would do me the honor of composing a translation in Italian, so
+              the Italian audiences could fully enjoy the magnificence of
+              Roberto Cantoral&rsquo;s words. The translation was beautiful, so
+              true to the original text in Spanish, and I couldn&rsquo;t wait
+              to record it.
+            </p>
+            <p>
+              In this album I offer you a personal tour of my life. In every
+              song there is a significant moment in my life represented. From
+              the deep-rooted songs of my body and soul like{" "}
+              <em>La Llorona</em>, to <em>Amapola</em> a song that my uncle
+              Bernardo, a tenor himself, made famous within the family,{" "}
+              <em>La Paloma</em>, <em>Divina ilusión</em> and{" "}
+              <em>Malagueña</em> pleasantly recall for me intimate moments
+              when, with my guitar, I performed my first serenades with my
+              family and the friends of my youth in my dear and lovely Ciudad
+              Juárez.
+            </p>
+            <p>I hope you&rsquo;ll enjoy it.</p>
+          </div>
+          <p className="mt-10 text-right font-display italic text-teal-deep text-[1.05rem]">
+            Jesús Daniel Hernández
+          </p>
+        </div>
+      </section>
+
       {/* BACK LINK */}
       <section className="py-16 bg-cream text-center">
         <Link
