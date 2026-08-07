@@ -2,6 +2,9 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
+  // diagnostic: log which RESEND_* keys are visible at runtime
+  console.log("[booking] RESEND env keys:", Object.keys(process.env).filter(k => k.includes("RESEND")));
+
   if (!process.env.RESEND_API_KEY) {
     return NextResponse.json({ error: "Email service not configured." }, { status: 500 });
   }
