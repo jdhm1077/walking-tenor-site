@@ -29,6 +29,9 @@ export default function BookingPage() {
         return;
       }
 
+      setName("");
+      setEmail("");
+      setDetails("");
       setStatus("success");
     } catch {
       setErrorMessage("Network error. Please check your connection and try again.");
@@ -44,8 +47,8 @@ export default function BookingPage() {
           <h1 className="text-4xl md:text-5xl text-cream leading-tight mb-5">
             Inquiry sent!
           </h1>
-          <p className="text-cream/70 leading-relaxed">
-            Thanks, {name}. We received your inquiry and will be in touch soon.
+          <p className="text-cream/70 leading-relaxed" aria-live="polite">
+            Thanks — we&rsquo;ll follow up with availability and a press kit shortly.
           </p>
         </div>
       </section>
@@ -74,9 +77,10 @@ export default function BookingPage() {
               id="name"
               type="text"
               required
+              disabled={status === "submitting"}
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40"
+              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40 disabled:opacity-50"
               placeholder="Your name"
             />
           </div>
@@ -88,9 +92,10 @@ export default function BookingPage() {
               id="email"
               type="email"
               required
+              disabled={status === "submitting"}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40"
+              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40 disabled:opacity-50"
               placeholder="you@example.com"
             />
           </div>
@@ -102,14 +107,15 @@ export default function BookingPage() {
               id="details"
               rows={4}
               required
+              disabled={status === "submitting"}
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40"
+              className="w-full px-4 py-3 rounded-lg border border-cream/20 bg-cream/[0.06] text-cream placeholder:text-cream/40 disabled:opacity-50"
               placeholder="Date, venue, event type..."
             />
           </div>
           {status === "error" && (
-            <p className="text-red-400 text-sm text-center">{errorMessage}</p>
+            <p className="text-red-400 text-sm text-center" aria-live="polite">{errorMessage}</p>
           )}
           <button
             type="submit"
