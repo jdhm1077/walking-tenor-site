@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { episodes } from "@/data/episodes";
+import RedCirclePlayer from "./RedCirclePlayer";
 
 export function generateStaticParams() {
   return episodes.map((ep) => ({ slug: ep.slug }));
@@ -46,9 +47,26 @@ export default async function EpisodePage({
       <section className="py-16 bg-cream">
         <div className="max-w-[700px] mx-auto px-8">
           <h2 className="eyebrow mb-4">Synopsis</h2>
-          <p className="text-[#3a3833] text-[1.05rem] leading-relaxed mb-12">
-            {episode.synopsis}
-          </p>
+          <div className="mb-12">
+            {episode.synopsisParagraphs ? (
+              episode.synopsisParagraphs.map((para, i) => (
+                <p key={i} className="text-[#3a3833] text-[1.05rem] leading-relaxed mb-4 last:mb-0">
+                  {para}
+                </p>
+              ))
+            ) : (
+              <p className="text-[#3a3833] text-[1.05rem] leading-relaxed">
+                {episode.synopsis}
+              </p>
+            )}
+          </div>
+
+          {episode.redcircleShowId && episode.redcircleEpisodeId && (
+            <RedCirclePlayer
+              showId={episode.redcircleShowId}
+              episodeId={episode.redcircleEpisodeId}
+            />
+          )}
 
           <div className="bg-cream-dim rounded-xl p-7 text-center mb-12">
             <p className="text-[#544f46] mb-5 text-sm">
