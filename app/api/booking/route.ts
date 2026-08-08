@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "bookings@thewalkingtenor.com",
     to: "admin@thewalkingtenor.com",
     replyTo: email,
     subject: `Booking inquiry from ${name}`,
