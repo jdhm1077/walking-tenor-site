@@ -94,6 +94,7 @@
     twt-bar-color 3.6s linear infinite,
     twt-bar-height 1.4s ease-in-out infinite alternate;
   animation-play-state: paused;
+  transition: transform 0.35s ease-out;
 }
 
 /* Animation only runs while .is-playing is present on the .twt-cover element.
@@ -163,6 +164,33 @@
   left: 8%;
   right: 8%;
 }
+
+/* ---------- Equalizer hover (card context) ---------- */
+/* scaleY animates on top of the paused twt-bar-height so each bar's
+   resting height stays intact and only the visual scale pulses. */
+
+@keyframes twt-eq-hover {
+  0%, 100% { transform: scaleY(0.82); }
+  50%       { transform: scaleY(1.25); }
+}
+
+.twt-card:hover .twt-cover__wave span {
+  animation:
+    twt-bar-color 3.6s linear infinite,
+    twt-bar-height 1.4s ease-in-out infinite alternate,
+    twt-eq-hover 0.5s ease-in-out infinite;
+  animation-play-state: running, paused, running;
+  transition: none; /* let animation run uninterrupted; transition re-engages on mouse-leave */
+}
+
+/* Stagger each bar ~100ms apart for an organic, non-unison feel */
+.twt-card:hover .twt-cover__wave span:nth-child(1) { animation-delay:  0s,    0s,    0ms; }
+.twt-card:hover .twt-cover__wave span:nth-child(2) { animation-delay: -1.2s, -0.35s, -100ms; }
+.twt-card:hover .twt-cover__wave span:nth-child(3) { animation-delay: -1.8s, -0.70s, -200ms; }
+.twt-card:hover .twt-cover__wave span:nth-child(4) { animation-delay: -2.7s, -1.05s, -300ms; }
+.twt-card:hover .twt-cover__wave span:nth-child(5) { animation-delay: -3.2s, -1.25s, -380ms; }
+.twt-card:hover .twt-cover__wave span:nth-child(6) { animation-delay: -0.6s, -0.20s, -120ms; }
+.twt-card:hover .twt-cover__wave span:nth-child(7) { animation-delay: -2.2s, -0.90s, -250ms; }
 
 /* ---------- Accessibility ---------- */
 

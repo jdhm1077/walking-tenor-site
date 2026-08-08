@@ -41,7 +41,7 @@ export default function PodcastPage() {
             <Link
               key={ep.slug}
               href={`/podcast/${ep.slug}`}
-              className="bg-cream rounded-xl overflow-hidden hover:-translate-y-1 transition-transform block group"
+              className="twt-card bg-cream rounded-xl overflow-hidden hover:-translate-y-1 transition-transform block group"
             >
               <div className="aspect-square relative overflow-hidden flex items-end p-4">
                 <PodcastCover
