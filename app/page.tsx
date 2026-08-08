@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import StorySlider from "@/components/StorySlider";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export default function Home() {
   return (
@@ -161,19 +162,7 @@ export default function Home() {
           <p className="text-cream/65 mb-8 leading-relaxed">
             New music, podcast episodes, and updates — straight to your inbox.
           </p>
-          <form className="flex gap-2.5 max-w-[420px] mx-auto flex-wrap justify-center">
-            <input
-              type="email"
-              placeholder="you@example.com"
-              className="flex-1 min-w-[220px] px-4.5 py-3.5 rounded-full border border-cream/25 bg-cream/[0.06] text-cream placeholder:text-cream/45"
-            />
-            <button
-              type="submit"
-              className="bg-terracotta text-cream px-6.5 py-3.5 rounded-full font-bold"
-            >
-              Subscribe
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </section>
     </>
