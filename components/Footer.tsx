@@ -29,9 +29,9 @@ export default function Footer() {
               Connect
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="https://instagram.com/thewalkingtenor" target="_blank" rel="noopener" className="hover:text-gold transition-colors">Instagram</a></li>
+              <li><a href="https://www.instagram.com/thewalkingtenor/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Instagram</a></li>
               <li><a href="#" className="hover:text-gold transition-colors">YouTube</a></li>
-              <li><a href="#" className="hover:text-gold transition-colors">Spotify</a></li>
+              <li><a href="https://open.spotify.com/show/0343LeVZviUhv63BzlZBjd?si=3e3d3fece58c4b14" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Spotify</a></li>
             </ul>
           </div>
           <div>

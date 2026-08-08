@@ -27,11 +27,29 @@ export default function PodcastPage() {
           <h1 className="text-4xl md:text-5xl text-cream leading-tight mb-4">
             Stories That Sing
           </h1>
-          <p className="text-cream/65">
+          <p className="text-cream/65 mb-8">
             Cinematic narrative episodes uncovering the hidden histories
             behind famous songs — 7 to 12 minutes, hosted by Jesús Daniel
             Hernández.
           </p>
+          <div className="flex gap-3 flex-wrap justify-center">
+            <a
+              href="https://open.spotify.com/show/0343LeVZviUhv63BzlZBjd?si=3e3d3fece58c4b14"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#1DB954] text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition-[filter]"
+            >
+              Listen on Spotify
+            </a>
+            <a
+              href="https://podcasts.apple.com/us/podcast/welcome-to-the-walking-tenor-podcast/id6799499875?i=1000781106645"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#9933CC] text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition-[filter]"
+            >
+              Listen on Apple Podcasts
+            </a>
+          </div>
         </div>
       </section>
 
@@ -68,12 +86,22 @@ export default function PodcastPage() {
       <section className="py-16 bg-cream text-center">
         <p className="text-[#544f46] mb-5">Listen on your favorite platform</p>
         <div className="flex gap-4 justify-center flex-wrap px-8">
-          <span className="border border-teal-deep text-teal-deep px-6 py-3 rounded-full text-sm font-bold">
-            Spotify — coming soon
-          </span>
-          <span className="border border-teal-deep text-teal-deep px-6 py-3 rounded-full text-sm font-bold">
-            Apple Podcasts — coming soon
-          </span>
+          <a
+            href="https://open.spotify.com/show/0343LeVZviUhv63BzlZBjd?si=3e3d3fece58c4b14"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-teal-deep text-teal-deep px-6 py-3 rounded-full text-sm font-bold hover:bg-teal-deep hover:text-cream transition-colors"
+          >
+            Spotify
+          </a>
+          <a
+            href="https://podcasts.apple.com/us/podcast/welcome-to-the-walking-tenor-podcast/id6799499875?i=1000781106645"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-teal-deep text-teal-deep px-6 py-3 rounded-full text-sm font-bold hover:bg-teal-deep hover:text-cream transition-colors"
+          >
+            Apple Podcasts
+          </a>
         </div>
       </section>
     </>
