@@ -34,6 +34,13 @@ export const episodes: Episode[] = [
     title: "Episode 0.5: The Song He Didn't Know He Gave Me",
     teaser: "A personal story about a song, a friendship, and the unexpected gift that inspired The Walking Tenor.",
     synopsis: "A personal story about a song, a friendship, and the unexpected gift that inspired The Walking Tenor.",
+    synopsisParagraphs: [
+      "Some songs entertain us. Others find the locked door.",
+      "In this deeply personal Prologue, tenor Jesús Daniel Hernández reflects on Glen Hansard’s “Her Mercy,” the loss of his son Denny, and the strange, beautiful way a song can become part of our lives without the artist ever knowing it.",
+      "What begins as a memory of concerts and a favorite song becomes something deeper: a reflection on grief, faith, mercy, and the gifts artists leave behind. Because sometimes music does more than accompany our lives—it gives us a place to sit when the world becomes too heavy.",
+      "This is the story of a song that was never written for him, but somehow found him anyway. A song that became a hand on the shoulder, a room for grief, and a reminder that even in loss, something can still arrive.",
+      "Stories That Sing.",
+    ],
     redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
     redcircleEpisodeId: "57ca9703-5311-41a7-8807-a95ad509bb38",
     gradient: "from-teal to-teal-deep",

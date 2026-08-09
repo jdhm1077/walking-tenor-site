@@ -73,12 +73,22 @@ export default async function EpisodePage({
               Listen on your favorite platform
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <span className="border border-teal-deep text-teal-deep px-5 py-2.5 rounded-full text-sm font-bold">
-                Spotify — coming soon
-              </span>
-              <span className="border border-teal-deep text-teal-deep px-5 py-2.5 rounded-full text-sm font-bold">
-                Apple Podcasts — coming soon
-              </span>
+              <a
+                href="https://open.spotify.com/show/0343LeVZviUhv63BzlZBjd?si=3e3d3fece58c4b14"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-teal-deep text-teal-deep px-5 py-2.5 rounded-full text-sm font-bold hover:bg-teal-deep hover:text-cream transition-colors"
+              >
+                Spotify
+              </a>
+              <a
+                href="https://podcasts.apple.com/us/podcast/welcome-to-the-walking-tenor-podcast/id6799499875?i=1000781106645"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-teal-deep text-teal-deep px-5 py-2.5 rounded-full text-sm font-bold hover:bg-teal-deep hover:text-cream transition-colors"
+              >
+                Apple Podcasts
+              </a>
             </div>
           </div>
 
