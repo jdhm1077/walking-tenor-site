@@ -34,6 +34,8 @@ export const episodes: Episode[] = [
     title: "Episode 0.5: The Song He Didn't Know He Gave Me",
     teaser: "A personal story about a song, a friendship, and the unexpected gift that inspired The Walking Tenor.",
     synopsis: "A personal story about a song, a friendship, and the unexpected gift that inspired The Walking Tenor.",
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "57ca9703-5311-41a7-8807-a95ad509bb38",
     gradient: "from-teal to-teal-deep",
   },
   {
