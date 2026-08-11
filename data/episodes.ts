@@ -51,6 +51,8 @@ export const episodes: Episode[] = [
     title: "Episode 1: The Song That Almost Didn't Exist",
     teaser: "Before “O Sole Mio” became a worldwide legend, the song flopped—and almost vanished.",
     synopsis: "Before “O Sole Mio” became a worldwide legend, the song flopped—and almost vanished.",
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "d7fa9b58-a62d-4cf8-92c9-1e9f226273ce",
     gradient: "from-gold to-terracotta",
   },
 ];
