@@ -51,6 +51,13 @@ export const episodes: Episode[] = [
     title: "Episode 1: The Song That Almost Didn't Exist",
     teaser: "Before “O Sole Mio” became a worldwide legend, the song flopped—and almost vanished.",
     synopsis: "Before “O Sole Mio” became a worldwide legend, the song flopped—and almost vanished.",
+    synopsisParagraphs: [
+      "One of the most famous songs in the world almost disappeared before the world ever learned to sing it.",
+      "In this episode, tenor Jesús Daniel Hernández follows the unlikely journey of ‘O Sole Mio—from Naples to distant Odessa, from a poem and melody that initially went unnoticed to the voice of Enrico Caruso, and eventually to Elvis Presley and millions of listeners around the world.",
+      "But beneath the famous melody is something more human: homesickness, love, memory, and the strange way we sometimes understand the warmth of home only after leaving it behind. Because ‘O Sole Mio isn’t really about the weather. It’s about the light we attach to the people and places we love.",
+      "This is the story of a song that flopped and almost vanished—but kept walking, voice by voice, room by room, heart by heart, until it became something the world could no longer forget.",
+      "Stories That Sing.",
+    ],
     redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
     redcircleEpisodeId: "d7fa9b58-a62d-4cf8-92c9-1e9f226273ce",
     gradient: "from-gold to-terracotta",
