@@ -31,7 +31,7 @@ export const episodes: Episode[] = [
   {
     slug: "episode-0-5",
     num: "0.5",
-    title: "Episode 0.5: The Song He Didn't Know He Gave Me",
+    title: "Episode 0.5: The Song He Didn’t Know He Gave Me",
     teaser: "A personal story about a song, a friendship, and the unexpected gift that inspired The Walking Tenor.",
     synopsis: "A personal story about a song, a friendship, and the unexpected gift that inspired The Walking Tenor.",
     synopsisParagraphs: [
@@ -48,7 +48,7 @@ export const episodes: Episode[] = [
   {
     slug: "the-song-that-almost-didnt-exist",
     num: "01",
-    title: "Episode 1: The Song That Almost Didn't Exist",
+    title: "Episode 1: The Song That Almost Didn’t Exist",
     teaser: "Before “O Sole Mio” became a worldwide legend, the song flopped—and almost vanished.",
     synopsis: "Before “O Sole Mio” became a worldwide legend, the song flopped—and almost vanished.",
     synopsisParagraphs: [
@@ -61,5 +61,17 @@ export const episodes: Episode[] = [
     redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
     redcircleEpisodeId: "d7fa9b58-a62d-4cf8-92c9-1e9f226273ce",
     gradient: "from-gold to-terracotta",
+  },
+  {
+    slug: "episode-2",
+    num: "02",
+    title: "Episode 2: The Tenor Who Wasn’t Supposed to Sing",
+    teaser: "Before Pavarotti became a legend, he nearly chose the classroom. The story of the dream—and the voice—he could no longer ignore.",
+    synopsis: "Before Pavarotti became a legend, he nearly chose the classroom. The story of the dream—and the voice—he could no longer ignore.",
+    synopsisParagraphs: [
+      "Before Pavarotti became a legend, he nearly chose the classroom. The story of the dream—and the voice—he could no longer ignore.",
+      "Stories That Sing.",
+    ],
+    gradient: "from-teal-deep to-gold",
   },
 ];
