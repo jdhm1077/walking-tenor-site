@@ -69,9 +69,16 @@ export const episodes: Episode[] = [
     teaser: "Before Pavarotti became a legend, he nearly chose the classroom. The story of the dream—and the voice—he could no longer ignore.",
     synopsis: "Before Pavarotti became a legend, he nearly chose the classroom. The story of the dream—and the voice—he could no longer ignore.",
     synopsisParagraphs: [
-      "Before Pavarotti became a legend, he nearly chose the classroom. The story of the dream—and the voice—he could no longer ignore.",
+      "Before Luciano Pavarotti became the white handkerchief, the stadiums, the Three Tenors, and one of the most recognizable voices in the world, he stood close to a very different life: a classroom.",
+      "In this episode, tenor Jesús Daniel Hernández follows Pavarotti from his working-class beginnings in Modena—the son of a baker and a factory worker—to the difficult choice between a respectable life as a teacher and a voice that was becoming impossible to ignore.",
+      "From his first professional steps in La Bohème to the moment he was called to replace one of the tenors he had once admired, this is a story about uncertainty, courage, and the dreams that become too loud to ignore.",
+      "And perhaps Pavarotti never really stopped being a teacher. His classroom simply became bigger—the opera house, the concert hall, the stadium, the television screen, and eventually, the world. He opened a door to opera for millions of people and invited them inside.",
+      "The greatest classroom he ever entered was the world.",
+      "And the lesson was joy.",
       "Stories That Sing.",
     ],
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "dfda82e2-98df-4010-818c-329017e6b98b",
     gradient: "from-teal-deep to-gold",
   },
 ];
