@@ -102,6 +102,8 @@ export const episodes: Episode[] = [
       "It can stop a body.",
       "But it cannot stop a chorus.",
     ],
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "72cdf4b8-8b4b-48b6-ba42-3ba34c7c1ac3",
     gradient: "from-terracotta to-teal",
   },
 ];
