@@ -145,6 +145,8 @@ export const episodes: Episode[] = [
         caption: "Danny and Jesús.",
       },
     ],
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "999a8057-4bd4-4939-a999-809a1fffda71",
     gradient: "from-teal to-gold",
   },
 ];
