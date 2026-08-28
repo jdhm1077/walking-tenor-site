@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { episodes } from "@/data/episodes";
 import RedCirclePlayer from "./RedCirclePlayer";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return episodes.map((ep) => ({ slug: ep.slug }));
@@ -50,9 +51,31 @@ export default async function EpisodePage({
           <div className="mb-12">
             {episode.synopsisParagraphs ? (
               episode.synopsisParagraphs.map((para, i) => (
-                <p key={i} className="text-[#3a3833] text-[1.05rem] leading-relaxed mb-4 last:mb-0">
-                  {para}
-                </p>
+                <div key={i}>
+                  <p className="text-[#3a3833] text-[1.05rem] leading-relaxed mb-4">
+                    {para}
+                  </p>
+                  {episode.synopsisImages
+                    ?.filter((img) => img.afterParagraph === i)
+                    .map((img, j) => (
+                      <div key={j} className="my-8 max-w-sm mx-auto text-center">
+                        <div className="rounded-xl overflow-hidden shadow-md">
+                          <Image
+                            src={img.src}
+                            alt={img.alt}
+                            width={480}
+                            height={360}
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
+                        {img.caption && (
+                          <p className="text-sm text-[#78725f] mt-2.5 italic">
+                            {img.caption}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                </div>
               ))
             ) : (
               <p className="text-[#3a3833] text-[1.05rem] leading-relaxed">

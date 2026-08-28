@@ -5,6 +5,12 @@ export type Episode = {
   teaser: string;
   synopsis: string;
   synopsisParagraphs?: string[];
+  synopsisImages?: {
+    src: string;
+    alt: string;
+    afterParagraph: number;
+    caption?: string;
+  }[];
   redcircleShowId?: string;
   redcircleEpisodeId?: string;
   gradient: string; // Tailwind gradient classes for placeholder art
@@ -105,5 +111,40 @@ export const episodes: Episode[] = [
     redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
     redcircleEpisodeId: "72cdf4b8-8b4b-48b6-ba42-3ba34c7c1ac3",
     gradient: "from-terracotta to-teal",
+  },
+  {
+    slug: "episode-3-5",
+    num: "3.5",
+    title: "Episode 3.5: The Song He Remembered",
+    teaser: "A little boy discovers a beautiful song—and years later, his father discovers the memory they made while listening to it.",
+    synopsis: "A little boy discovers a beautiful song—and years later, his father discovers the memory they made while listening to it.",
+    synopsisParagraphs: [
+      "When Danny was five or six years old, he came home from school with a song he couldn’t stop thinking about.",
+      "Sitting on his father’s lap in a small room in military housing at Fort Hood, Texas, he tried to describe what he had heard: a cat singing a song that was “soooo beautiful.” The song was “Memory,” from Cats.",
+      "They found it on the computer and played it again and again, while Jesús watched his little boy experience the mysterious power of music before he was old enough to explain why it moved him.",
+      "Years later, Danny still remembered that afternoon.",
+      "In this special birthday episode of The Walking Tenor Podcast, Jesús returns to that ordinary moment and follows the story behind “Memory”—from T. S. Eliot and Andrew Lloyd Webber to Grizabella and one of musical theatre’s most beloved songs.",
+      "But this is ultimately not a story about Cats.",
+      "It’s about a father and son. About the little moments we don’t realize are important while we’re living them. About the things memory forgets—and the things it somehow refuses to let go.",
+      "Because that afternoon, Danny thought he was listening to a beautiful song.",
+      "His father didn’t know it yet, but they were making a memory.",
+      "Happy birthday, Danny.",
+      "Stories That Sing.",
+    ],
+    synopsisImages: [
+      {
+        src: "/images/episode-3-5/danny-young.JPG",
+        alt: "Danny as a young child",
+        afterParagraph: 2,
+        caption: "Danny, around the time of that afternoon at Fort Hood.",
+      },
+      {
+        src: "/images/episode-3-5/danny-and-jesus-recent.jpeg",
+        alt: "Danny and Jesús together",
+        afterParagraph: 6,
+        caption: "Danny and Jesús.",
+      },
+    ],
+    gradient: "from-teal to-gold",
   },
 ];
