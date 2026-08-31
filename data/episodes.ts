@@ -149,4 +149,23 @@ export const episodes: Episode[] = [
     redcircleEpisodeId: "999a8057-4bd4-4939-a999-809a1fffda71",
     gradient: "from-teal to-gold",
   },
+  {
+    slug: "episode-4",
+    num: "04",
+    title: "Episode 4: The Jazz Singer Who Couldn't Read Music",
+    teaser: "Before Ella Fitzgerald became a legend, she planned to dance. Then she opened her mouth, listened to the music—and changed jazz forever.",
+    synopsis: "Before Ella Fitzgerald became a legend, she planned to dance. Then she opened her mouth, listened to the music—and changed jazz forever.",
+    synopsisParagraphs: [
+      "Before Ella Fitzgerald became the First Lady of Song, she was a nervous teenager standing on the stage of Harlem's Apollo Theater with a very different plan.",
+      "She was supposed to dance.",
+      "Instead, she sang—and a door opened.",
+      "In this episode of The Walking Tenor Podcast, Jesús Daniel Hernández follows Ella from that pivotal Amateur Night performance into Chick Webb's band, the exhilarating freedom of scat singing, and the extraordinary ability to hear and respond to music that would make her one of the greatest voices in jazz.",
+      "But this isn't simply a story about natural talent. It's about a different kind of musical literacy—the ability to read a room, feel a rhythm, hear what another musician is about to do, and answer before the moment disappears.",
+      "Because instinct may open a door.",
+      "Work keeps you in the room.",
+      "This is the story of a young woman who listened, learned, stepped in—and gave sound back to the world as joy.",
+      "Stories That Sing.",
+    ],
+    gradient: "from-terracotta to-teal-deep",
+  },
 ];
