@@ -166,6 +166,8 @@ export const episodes: Episode[] = [
       "This is the story of a young woman who listened, learned, stepped in—and gave sound back to the world as joy.",
       "Stories That Sing.",
     ],
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "60e05c45-0f4f-4bfb-acc1-25a3c4b19db5",
     gradient: "from-terracotta to-teal-deep",
   },
 ];
