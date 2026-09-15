@@ -190,6 +190,8 @@ export const episodes: Episode[] = [
       "Maybe that’s just relief finally catching up.",
       "Stories That Sing.",
     ],
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "cd5b6581-116d-458c-87e2-3de4612ac215",
     gradient: "from-gold to-teal",
   },
 ];
