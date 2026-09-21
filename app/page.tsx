@@ -1,9 +1,17 @@
+export const revalidate = 3600;
+
 import Link from "next/link";
 import Image from "next/image";
 import StorySlider from "@/components/StorySlider";
 import NewsletterForm from "@/components/NewsletterForm";
+import {
+  performances,
+  isUpcoming,
+  formatDateParts,
+} from "@/data/performances";
 
 export default function Home() {
+  const nextThree = performances.filter((p) => isUpcoming(p.date)).slice(0, 3);
   return (
     <>
       {/* HERO */}
@@ -151,6 +159,85 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* PERFORMANCES TEASER */}
+      {nextThree.length > 0 && (
+        <section className="py-24 bg-cream-dim">
+          <div className="max-w-[1160px] mx-auto px-8">
+            <div className="text-center max-w-[560px] mx-auto mb-12">
+              <span className="eyebrow block mb-3">Upcoming</span>
+              <h2 className="text-3xl md:text-4xl text-teal-deep">
+                Upcoming Performances
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {nextThree.map((perf) => {
+                const { month, day, year } = formatDateParts(perf.date);
+                return (
+                  <div
+                    key={perf.id}
+                    className="bg-cream border border-ink/10 rounded-xl p-6 flex flex-col"
+                  >
+                    <div className="flex items-start gap-4 mb-5">
+                      <div className="shrink-0 text-center w-12">
+                        <div className="text-[0.6rem] font-bold tracking-[0.18em] text-gold uppercase">
+                          {month}
+                        </div>
+                        <div className="text-3xl font-bold leading-none text-teal-deep font-display">
+                          {day}
+                        </div>
+                        <div className="text-[0.62rem] text-ink/40 mt-0.5">
+                          {year}
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-display text-teal-deep text-[1rem] leading-snug mb-1">
+                          {perf.title}
+                        </h3>
+                        {perf.venue ? (
+                          <p className="text-[#6b665e] text-sm leading-snug">
+                            {perf.venue}
+                          </p>
+                        ) : null}
+                        <p className="text-[#6b665e] text-sm">{perf.city}</p>
+                        {perf.time && (
+                          <p className="text-[#6b665e] text-xs mt-0.5">
+                            {perf.time}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="mt-auto">
+                      {perf.link ? (
+                        <a
+                          href={perf.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block border border-teal-deep text-teal-deep text-xs font-bold px-4 py-2 rounded-full hover:bg-teal-deep hover:text-cream transition-colors"
+                        >
+                          {perf.linkText ?? "Event Details"}
+                        </a>
+                      ) : (
+                        <span className="text-xs italic text-ink/35">
+                          Details coming soon
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="text-center mt-10">
+              <Link
+                href="/performances"
+                className="text-teal-deep font-bold text-sm border-b-2 border-teal-deep pb-0.5 hover:text-terracotta hover:border-terracotta transition-colors"
+              >
+                View full calendar &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* NEWSLETTER CTA */}
       <section className="py-24 bg-teal-deep text-center relative overflow-hidden">
