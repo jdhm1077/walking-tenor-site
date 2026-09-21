@@ -66,6 +66,12 @@ const headshots = [
     href: "/images/press-kit/headshot-candid.png",
     objectPosition: "75% 20%",
   },
+  {
+    src: "/images/press-kit/guitar-headshot.png",
+    label: "Artistic headshot",
+    file: "guitar-headshot.png",
+    href: "/images/press-kit/guitar-headshot.png",
+  },
 ];
 
 const downloads = [
@@ -83,6 +89,11 @@ const downloads = [
     label: "Candid headshot",
     file: "headshot-candid.png",
     href: "/images/press-kit/headshot-candid.png",
+  },
+  {
+    label: "Artistic headshot",
+    file: "guitar-headshot.png",
+    href: "/images/press-kit/guitar-headshot.png",
   },
   {
     label: "Repertoire / resume PDF",
@@ -230,11 +241,11 @@ export default function PressKitPage() {
 
       {/* ── 3. HEADSHOTS ── */}
       <section className="py-20 bg-cream-dim">
-        <div className="max-w-[840px] mx-auto px-8">
+        <div className="max-w-[1100px] mx-auto px-8">
           <h2 className="text-3xl md:text-4xl text-teal-deep text-center mb-12">
             Headshots
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {headshots.map((shot) => (
               <div key={shot.label}>
                 <div className="relative aspect-square border border-ink/10 overflow-hidden bg-teal-deep/10">
