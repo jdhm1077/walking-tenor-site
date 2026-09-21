@@ -64,6 +64,7 @@ const headshots = [
     label: "Candid headshot",
     file: "headshot-candid.png",
     href: "/images/press-kit/headshot-candid.png",
+    objectPosition: "75% 20%",
   },
 ];
 
@@ -242,6 +243,7 @@ export default function PressKitPage() {
                     alt={shot.label}
                     fill
                     className="object-cover"
+                    style={shot.objectPosition ? { objectPosition: shot.objectPosition } : undefined}
                     sizes="(min-width: 640px) 50vw, 100vw"
                   />
                 </div>
