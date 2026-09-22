@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/podcast/the-opera-star-who-carried-two-worlds",
+        destination: "/podcast/episode-6",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

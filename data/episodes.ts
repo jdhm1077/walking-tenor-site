@@ -196,7 +196,7 @@ export const episodes: Episode[] = [
     gradient: "from-gold to-teal",
   },
   {
-    slug: "the-opera-star-who-carried-two-worlds",
+    slug: "episode-6",
     num: "06",
     title: "Episode 6: The Opera Star Who Carried Two Worlds",
     subtitle: "Plácido Domingo’s Rise, His Reach, and the Singers He Helped Along the Way",
