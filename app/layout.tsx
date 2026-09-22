@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato, Fraunces, IBM_Plex_Mono } from "next/font/google";
+import { Playfair_Display, Lato, Fraunces, IBM_Plex_Mono, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -29,6 +30,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400"],
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   title: "The Walking Tenor | Jesús Daniel Hernández",
   description:
@@ -40,10 +48,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${lato.variable} ${fraunces.variable} ${ibmPlexMono.variable} antialiased`}>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+      <body className={`${playfair.variable} ${lato.variable} ${fraunces.variable} ${ibmPlexMono.variable} ${cormorant.variable} antialiased`}>
+        <SiteChrome nav={<Nav />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );
