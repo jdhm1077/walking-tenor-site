@@ -2,6 +2,7 @@ export type Episode = {
   slug: string;
   num: string;
   title: string;
+  subtitle?: string;
   teaser: string;
   synopsis: string;
   synopsisParagraphs?: string[];
@@ -193,5 +194,40 @@ export const episodes: Episode[] = [
     redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
     redcircleEpisodeId: "cd5b6581-116d-458c-87e2-3de4612ac215",
     gradient: "from-gold to-teal",
+  },
+  {
+    slug: "the-opera-star-who-carried-two-worlds",
+    num: "06",
+    title: "Episode 6: The Opera Star Who Carried Two Worlds",
+    subtitle: "Plácido Domingo’s Rise, His Reach, and the Singers He Helped Along the Way",
+    teaser: "Born in Madrid and raised in Mexico, Plácido Domingo carried both worlds onto the international stage. But for one young soldier with a voice and no clear map forward, his greatest impact happened offstage—when he stopped to listen.",
+    synopsis: "Born in Madrid and raised in Mexico, Plácido Domingo carried both worlds onto the international stage. But for one young soldier with a voice and no clear map forward, his greatest impact happened offstage—when he stopped to listen.",
+    synopsisParagraphs: [
+      "Plácido Domingo was born in Madrid, raised in Mexico, and grew up inside the world of zarzuela before becoming one of opera’s most internationally recognized voices. His extraordinary career would eventually stretch far beyond singing—from the opera house to the conductor’s podium, from The Three Tenors to arts leadership, and from performing the great roles of the past to helping discover the singers who might carry opera into the future.",
+      "But this episode of The Walking Tenor is also personal.",
+      "Long before Jesús Daniel Hernández knew exactly where his own voice might take him, he stood before Domingo in San Antonio, Texas—a soldier and an aspiring opera singer with no clear map for what came next. Domingo listened. What followed was encouragement, opportunity, and a moment of recognition that would leave a lasting fingerprint on Hernández’s life and career.",
+      "Years later, their paths would cross again, including during Hernández’s work with Washington National Opera, where the second photograph on this page was taken after a performance of Hamlet in Washington, D.C.",
+      "This is a story about Madrid and Mexico, zarzuela and opera, enormous stages and young voices still waiting to be heard. It is also a reflection on mentorship, access, gratitude, and what can happen when someone who has already reached the top turns around and listens to the person still climbing.",
+      "Domingo’s public legacy has also included controversy and allegations, which this episode does not attempt to erase or adjudicate. Instead, Hernández speaks from the experience he can personally testify to: the artist and mentor who heard something in a young singer and encouraged him to keep walking.",
+      "Because sometimes a legacy isn’t found only in recordings, roles, or applause.",
+      "Sometimes it lives in the person who kept going because someone once told him:",
+      "There is something here.",
+      "Stories That Sing.",
+    ],
+    synopsisImages: [
+      {
+        src: "/images/episode-6/domingo-me-soldier.png",
+        alt: "Jesús and Plácido Domingo, San Antonio, Texas",
+        afterParagraph: 2,
+        caption: "Jesús and Plácido Domingo, San Antonio, Texas.",
+      },
+      {
+        src: "/images/episode-6/domingo-me-hamlet.jpg",
+        alt: "Jesús and Plácido Domingo, after Hamlet, Washington National Opera",
+        afterParagraph: 3,
+        caption: "Jesús and Plácido Domingo, after Hamlet, Washington National Opera.",
+      },
+    ],
+    gradient: "from-teal-deep to-terracotta",
   },
 ];

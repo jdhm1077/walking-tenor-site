@@ -42,6 +42,11 @@ export default async function EpisodePage({
           <h1 className="text-3xl md:text-5xl text-cream leading-tight font-display font-bold">
             {episode.title}
           </h1>
+          {episode.subtitle && (
+            <p className="text-cream/70 text-base md:text-lg italic font-display mt-3 max-w-[560px] mx-auto leading-snug">
+              {episode.subtitle}
+            </p>
+          )}
         </div>
       </section>
 
