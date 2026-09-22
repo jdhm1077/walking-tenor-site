@@ -228,6 +228,8 @@ export const episodes: Episode[] = [
         caption: "Jesús and Plácido Domingo, after Hamlet, Washington National Opera.",
       },
     ],
+    redcircleShowId: "43edea2e-6c4c-4d1f-a381-617303cf24c3",
+    redcircleEpisodeId: "f7f124f0-3c5e-469e-89ae-57d62c304547",
     gradient: "from-teal-deep to-terracotta",
   },
 ];
