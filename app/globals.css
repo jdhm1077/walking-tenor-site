@@ -4,9 +4,12 @@
   --color-teal: #1B6868;
   --color-teal-deep: #123F3F;
   --color-terracotta: #C4573A;
+  --color-terracotta-deep: #9C4530;
   --color-cream: #FAF7F0;
   --color-cream-dim: #EFE8D8;
   --color-gold: #C9A24A;
+  --color-gold-bright: #E4C158;
+  --color-gold-dim: #8C7239;
   --color-ink: #211F1C;
 }
 
@@ -14,9 +17,12 @@
   --color-teal: var(--color-teal);
   --color-teal-deep: var(--color-teal-deep);
   --color-terracotta: var(--color-terracotta);
+  --color-terracotta-deep: var(--color-terracotta-deep);
   --color-cream: var(--color-cream);
   --color-cream-dim: var(--color-cream-dim);
   --color-gold: var(--color-gold);
+  --color-gold-bright: var(--color-gold-bright);
+  --color-gold-dim: var(--color-gold-dim);
   --color-ink: var(--color-ink);
   --font-display: var(--font-playfair);
   --font-body: var(--font-lato);

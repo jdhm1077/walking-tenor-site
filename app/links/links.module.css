@@ -1,0 +1,430 @@
+/* Full-viewport dark shell */
+.page {
+  min-height: 100vh;
+  font-family: var(--font-lato), sans-serif;
+  background:
+    radial-gradient(60% 40% at 50% 0%, rgba(196,87,58,0.16) 0%, transparent 60%),
+    radial-gradient(90% 70% at 50% 100%, rgba(27,104,104,0.14) 0%, transparent 60%),
+    linear-gradient(180deg, #142e2c 0%, #1a1613 45%, #1b1a17 100%);
+  color: #faf7f0;
+  display: flex;
+  justify-content: center;
+  padding: 46px 18px 60px;
+  position: relative;
+}
+
+/* Grain overlay */
+.page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+/* Vignette */
+.page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  box-shadow: inset 0 0 160px 40px rgba(0,0,0,0.55);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Portrait ── */
+.portraitFrame {
+  width: 186px;
+  height: 186px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(
+    from 210deg,
+    #e4c158 0deg,
+    #8c7239 90deg,
+    #c4573a 180deg,
+    #e4c158 270deg,
+    #e4c158 360deg
+  );
+  position: relative;
+}
+
+.portraitFrame::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  border: 1px solid #1b6868;
+  opacity: 0.75;
+}
+
+.portraitFrame::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 6px rgba(201,162,74,0.16), 0 18px 40px -12px rgba(0,0,0,0.6);
+}
+
+.portraitMid {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 7px;
+  background: #1b1a17;
+}
+
+.portraitInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #0c0b0a;
+}
+
+.portraitImg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Identity ── */
+.name {
+  font-family: var(--font-playfair), serif;
+  font-weight: 800;
+  text-align: center;
+  font-size: clamp(1.6rem, 7vw, 2.2rem);
+  letter-spacing: 2px;
+  margin: 22px 0 12px;
+  line-height: 1.1;
+  color: #faf7f0;
+}
+
+.tagline {
+  text-align: center;
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  color: #e4c158;
+  font-weight: 600;
+  font-size: 1.28rem;
+  max-width: 360px;
+  margin: 0 auto 16px;
+  line-height: 1.4;
+}
+
+.identityCopy {
+  text-align: center;
+  color: #aba290;
+  font-size: 0.97rem;
+  line-height: 1.68;
+  max-width: 390px;
+  margin: 0 auto 28px;
+  font-weight: 400;
+}
+
+/* ── Socials ── */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.socialBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,162,74,0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.socialBtn:hover {
+  border-color: #e4c158;
+  background: rgba(201,162,74,0.09);
+  transform: translateY(-1px);
+}
+
+.socialIcon {
+  width: 15px;
+  height: 15px;
+  fill: #c9a24a;
+  transition: fill 0.2s ease;
+  pointer-events: none;
+}
+
+.socialBtn:hover .socialIcon {
+  fill: #e4c158;
+}
+
+/* ── Identity pillars ── */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 36px;
+  border-top: 1px solid rgba(201,162,74,0.22);
+}
+
+.pillar {
+  text-align: center;
+  padding: 16px 10px;
+  border-bottom: 1px solid rgba(201,162,74,0.22);
+}
+
+.pillarTitle {
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 2px;
+  color: #e4c158;
+  text-transform: uppercase;
+}
+
+.pillarSub {
+  font-family: var(--font-cormorant), serif;
+  font-size: 0.98rem;
+  color: #aba290;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* ── CTA buttons ── */
+.cta {
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  padding: 19px 21px;
+  border-radius: 14px;
+  margin-bottom: 13px;
+  position: relative;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  min-height: 44px;
+}
+
+.ctaTitle {
+  display: block;
+  font-weight: 900;
+  font-size: 0.98rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-family: var(--font-lato), sans-serif;
+}
+
+.ctaSub {
+  display: block;
+  font-weight: 400;
+  font-size: 0.86rem;
+  margin-top: 6px;
+  line-height: 1.45;
+  font-family: var(--font-cormorant), serif;
+  letter-spacing: 0.1px;
+}
+
+.ctaFeature {
+  background: linear-gradient(135deg, #9c4530 0%, #c4573a 45%, #c9a24a 100%);
+  color: #1b1a17;
+  box-shadow: 0 14px 30px -12px rgba(196,87,58,0.55);
+  padding: 22px 21px 20px;
+  border: 1px solid rgba(228,193,88,0.4);
+}
+
+.ctaFeature .ctaSub {
+  color: rgba(27,26,23,0.8);
+  font-size: 0.9rem;
+}
+
+.ctaTag {
+  display: inline-block;
+  color: rgba(27,26,23,0.65);
+  font-size: 0.63rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: var(--font-lato), sans-serif;
+}
+
+.ctaDark {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(201,162,74,0.22);
+  color: #faf7f0;
+}
+
+.ctaDark .ctaTitle {
+  color: #e4c158;
+}
+
+.ctaDark .ctaSub {
+  color: #aba290;
+}
+
+.ctaDark:hover {
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(201,162,74,0.4);
+}
+
+.ctaCream {
+  background: #faf7f0;
+  color: #211f1c;
+  border: 1px solid rgba(27,26,23,0.06);
+}
+
+.ctaCream .ctaTitle {
+  color: #211f1c;
+}
+
+.ctaCream .ctaSub {
+  color: rgba(27,26,23,0.62);
+}
+
+/* ── Divider rule ── */
+.rule {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201,162,74,0.22) 25%,
+    rgba(201,162,74,0.22) 75%,
+    transparent
+  );
+  margin: 30px 0 22px;
+}
+
+/* ── Newsletter card ── */
+.newsletterCard {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,162,74,0.22);
+  border-radius: 16px;
+  padding: 24px 21px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.newsletterCard h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+  color: #e4c158;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.newsletterCard p {
+  color: #aba290;
+  font-size: 0.9rem;
+  margin: 0 0 18px;
+  line-height: 1.55;
+  font-family: var(--font-cormorant), serif;
+}
+
+.nlForm {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nlInput {
+  flex: 1;
+  min-width: 150px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(201,162,74,0.3);
+  background: rgba(255,255,255,0.04);
+  color: #faf7f0;
+  font-family: var(--font-lato), sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.nlInput::placeholder {
+  color: #7c7566;
+}
+
+.nlInput:focus {
+  border-color: rgba(201,162,74,0.6);
+}
+
+.nlButton {
+  padding: 13px 22px;
+  border-radius: 10px;
+  border: 1px solid #c9a24a;
+  background: transparent;
+  color: #e4c158;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--font-lato), sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  min-height: 44px;
+}
+
+.nlButton:hover:not(:disabled) {
+  background: rgba(201,162,74,0.12);
+}
+
+.nlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nlSuccess {
+  color: rgba(250,247,240,0.85);
+  font-size: 1rem;
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.nlError {
+  width: 100%;
+  text-align: center;
+  color: #f4a4a4;
+  font-size: 0.82rem;
+  margin-top: 4px;
+  font-family: var(--font-lato), sans-serif;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  margin-top: 34px;
+  color: #7c7566;
+  font-size: 0.76rem;
+  line-height: 1.9;
+  font-family: var(--font-lato), sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.footer a {
+  color: #8c7239;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: #e4c158;
+}
